@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: 463946470401.dkr.ecr.us-east-1.amazonaws.com/mysql-docker:Darshan
+        image: 463946470401.dkr.ecr.us-east-1.amazonaws.com/sql-repo:Darshan
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: "password"
