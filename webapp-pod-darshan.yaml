@@ -11,7 +11,7 @@ spec:
     image: 463946470401.dkr.ecr.us-east-1.amazonaws.com/webapp-repo:Darshan
     env:
     - name: DBHOST
-      value: "dhmodidb.mysql-namespace-darshan.svc.cluster.local"  
+      value: "dhmodi1db.mysql-namespace-darshan.svc.cluster.local"  
     - name: DBPORT
       value: "3306"
     - name: DBUSER
