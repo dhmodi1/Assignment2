@@ -1,1 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql
+  namespace: mysql-namespace-darshan
+  labels:
+    app: mysql
+spec:
+  containers:
+  - name: mysql
+    image: 463946470401.dkr.ecr.us-east-1.amazonaws.com/database-repo:Darshan
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: "password"
+    ports:
+    - containerPort: 3306
+  imagePullSecrets:
+  - name: ecr-registry-secret-mysql 
+
 
