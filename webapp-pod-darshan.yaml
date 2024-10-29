@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webapp-darshan
+  namespace: webapp-namespace-darshan
+  labels:
+    app: employees  
+spec:
+  containers:
+  - name: webapp
+    image: 463946470401.dkr.ecr.us-east-1.amazonaws.com/webapp-repo:Darshan
+    env:
+    - name: DBHOST
+      value: "dhmodidb.mysql-namespace-darshan.svc.cluster.local"  
+    - name: DBPORT
+      value: "3306"
+    - name: DBUSER
+      value: "root"
+    - name: DBPWD
+      value: "password"
+    ports:
+    - containerPort: 80
+  imagePullSecrets:
+  - name: ecr-registry-secret  
+ 

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: mysql-replicaset-darshan
+  namespace: mysql-namespace-darshan
+  labels:
+    app: mysql
+spec:
+  replicas: 1  
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: 463946470401.dkr.ecr.us-east-1.amazonaws.com/mysql-docker:Darshan
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "password"
+        ports:
+        - containerPort: 3306
+      imagePullSecrets:
+      - name: ecr-registry-secret-mysql
